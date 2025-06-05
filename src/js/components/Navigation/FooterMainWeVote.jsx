@@ -87,7 +87,6 @@ class FooterMainWeVote extends Component {
   render () {
     const { classes } = this.props;
     const { voterContactEmailListCount } = this.state;
-    // const helpDestinationPage = lookupPageNameAndPageTypeDict("https://help.wevote.us/hc/en-us");
     return (
       <Wrapper>
         {isWebApp() && (
@@ -133,11 +132,10 @@ class FooterMainWeVote extends Component {
                 linkIdAttribute="footerLinkWeVoteHelp"
                 url="https://help.wevote.us/hc/en-us"
                 target="_blank"
-                className="open-web-site"
-                // destinationPageName={helpDestinationPage.pageName}
-                // destinationPageType={helpDestinationPage.pageType}
-                trackingOn
-                body={(<span>Help</span>)}
+                body={(
+                  <span>Help</span>
+                )}
+                className={classes.link}
               />
               <RowSpacer />
               <Link id="footerLinkPrivacy" className={classes.link} to="/privacy" onClick={() => this.pushDataLayer("/privacy")}>Privacy</Link>
@@ -155,8 +153,9 @@ class FooterMainWeVote extends Component {
                     linkIdAttribute="footerLinkTeam"
                     url={`${webAppConfig.WE_VOTE_URL_PROTOCOL + webAppConfig.WE_VOTE_HOSTNAME}/more/about`}
                     target="_blank"
-                    trackingOn
-                    body={(<span>Team</span>)}
+                    body={(
+                      <span>Team</span>
+                    )}
                     className={classes.link}
                   />
                   <RowSpacer />
@@ -164,8 +163,9 @@ class FooterMainWeVote extends Component {
                     linkIdAttribute="footerLinkCredits"
                     url={`${webAppConfig.WE_VOTE_URL_PROTOCOL + webAppConfig.WE_VOTE_HOSTNAME}/more/credits`}
                     target="_blank"
-                    trackingOn
-                    body={(<span>Credits &amp; Thanks</span>)}
+                    body={(
+                      <span>Credits &amp; Thanks</span>
+                    )}
                     className={classes.link}
                   />
                 </>
@@ -183,8 +183,9 @@ class FooterMainWeVote extends Component {
                   linkIdAttribute="footerLinkVolunteer"
                   url="https://wevote.applytojob.com/apply"
                   target="_blank"
-                  trackingOn
-                  body={(<span>Volunteering Opportunities</span>)}
+                  body={(
+                    <span>Volunteering Opportunities</span>
+                  )}
                   className={classes.link}
                 />
                 <RowSpacer />
